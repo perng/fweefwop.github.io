@@ -16,8 +16,9 @@ body {
     padding: 2em 2em 4em;
 }
 
-header img {
-    height: 80px;
+h1 img {
+    height: 60px;
+    padding-right: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,37 +72,27 @@ li a:hover {
   background-color: #6C33FF;
 }
 
-img {
-    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
-    background: transparent;
-    border: 10px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    display: block;
-    margin: 1.3em auto;
-    max-width: 95%;
-}
-
 .fwee-logo {
-    font-family: Snell Roundhand;
+    font-family: Lucida Handwriting;
     text-decoration: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 50px;
     font-weight: bold;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     color: #6C33FF;
 }
 
 .fwop-logo {
-    font-family: Snell Roundhand;
+    font-family: Lucida Handwriting;
     text-decoration: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 50px;
     font-weight: bold;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     color: #FFC300;
 }
 
