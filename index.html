@@ -7,7 +7,15 @@
 		<meta name="description" content="High school cyber security club">
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){ 
+                $('#content').load("nmap.html");
+
+            });
+        </script>
 	</head>
+    
 	<body>
     
         <div><img src="fweefwop.png" />
@@ -15,18 +23,17 @@
         <div>    
         <nav>
     		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/resource" class="active">Resources</a></li>
-			<li><a href="/ctf">CTFs</a></li>
-            <li style="float:right"><a href="/about">About</a></li>
+                <li href="/index"><a>Home</a></li>
+			<li class="active"><a>Resources</a></li>
+            <li><a>CTFs</a></li>
+                <li style="float:right"><a>About</a></li>
     		</ul>
         </nav>
         </div>
         
 		<div class="container">
     		<div class="blurb">
-        		<h1>Hello there!</h1>
-				<p>We are a high school cyber security club. </p>
+                <div id="content"></div>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 		<footer>

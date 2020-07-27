@@ -69,6 +69,14 @@ li a:hover {
   background-color: #111;
 }
 
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+
 .active {
   background-color: #6C33FF;
 }
