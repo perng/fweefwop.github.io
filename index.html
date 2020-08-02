@@ -8,30 +8,42 @@
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css" >
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
+        <script type="text/javascript">
             $(document).ready(function(){ 
                 $('#content').load("resources.html");
 
             });
+        </script>
+        <script type="text/javascript">
+            function loadPage(href)
+            {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", href, false);
+                xmlhttp.send();
+                return xmlhttp.responseText;
+            }
         </script>
 	</head>
     
 	<body>
     
         <div><img src="fweefwop.png" />
-        </div>
+        </div>    
         <div>    
         <nav>
     		<ul>
-                <li href="/index"><a>Home</a></li>
-			<li class="active"><a>Resources</a></li>
-            <li><a>CTFs</a></li>
+            <li href="/index"><a>Home</a></li>
+			<li class="active"><a><div onClick="document.getElementById('container').innerHTML = 
+                loadPage('resources.html');">Resources</div></a></li>
+                
+            <li><a><div onClick="document.getElementById('container').innerHTML = 
+                loadPage('resources.html');">CTFs</div></a></li>
                 <li style="float:right"><a>About</a></li>
     		</ul>
         </nav>
         </div>
         
-		<div class="container">
+		<div class="container" id="container">
     		<div class="blurb">
                 <div id="content"></div>
     		</div><!-- /.blurb -->

