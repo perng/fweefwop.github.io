@@ -1,1 +1,30 @@
-html
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+<h3>NMAP</h3>
+<h4>Quick Scan</h4>
+<code>nmap -sV -sC -A $IP </code>
+
+<h4>Useful NMAP Scripts</h4>
+<code>ls /usr/share/nmap/scripts</code>
+</div>
+
+<div>    
+<h3>Webservers</h3>
+<h4>Find vulnerability</h4>
+<code>nikto -h http://$IP </code> <br />
+
+<h4>Directory Brute Force</h4>
+<code>dirb http://$IP rockyou.txt -w -X .php,.html,.txt</code> <br />
+</div>
+    
+<div>    
+<h3>DNS</h3>
+<h4>Zone Transfer</h4>
+<code>dig axfr $domain-name @$IP<br/>ie. dig axfr @10.120.0.3 -p 6362 namezone.com</code>
+<h4>Enum</h4>
+<code>dnsrecon -d $domain-name</code>
+</div>
+<br><br>
+</body></html>

