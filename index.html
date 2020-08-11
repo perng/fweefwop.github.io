@@ -10,7 +10,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){ 
-                $('#content').load("resources.html");
+                $('#content').load("home.html");
 
             });
         </script>
@@ -32,7 +32,8 @@
         <div>    
         <nav>
     		<ul>
-            <li href="/index"><a>Home</a></li>
+            <li href="/index"><a><div onClick="document.getElementById('container').innerHTML = 
+                loadPage('home.html');">Home</div></a></li>
 			<li ><a><div onClick="document.getElementById('container').innerHTML = 
                 loadPage('resources.html');">Resources</div></a></li>
                 
